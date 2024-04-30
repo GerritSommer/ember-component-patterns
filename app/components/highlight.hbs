@@ -1,0 +1,14 @@
+{{#let (get-code-snippet @name) as |snippet|}}
+  <div class="code-block">
+
+    {{#if @file}}
+      <span>{{@file}}</span>
+    {{/if}}
+
+    <CodeBlock
+      @language={{or @language snippet.language}}
+      @code={{snippet.source}}
+    />
+
+  </div>
+{{/let}}

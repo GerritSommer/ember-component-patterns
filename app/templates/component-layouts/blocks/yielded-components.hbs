@@ -1,0 +1,58 @@
+{{!-- BEGIN-SNIPPET block-with-yielded-components-hbs
+{{yield
+  (hash (
+    Header=(component "myTable/header" someArgument=this.property)
+    Body=(component "myTable/body")
+    Cell=(component "myTable/cell")
+    Footer=(component "myTable/footer")
+  )
+)}}
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET block-with-yielded-components-invocation-hbs
+<MyTable as |components|>
+  <components.Head @columns={{this.columns}} />
+
+  <components.Body @rows={{this.rows}} as |row|>
+    ...
+  </components.Body>
+
+  <components.Footer @columns={{this.columns}} />
+</MyTable>
+END-SNIPPET --}}
+
+<h2>Block Component with yielded components</h2>
+
+<article>
+  <section>
+    <h3>How to use</h3>
+    <Highlight @name="block-with-yielded-components-invocation-hbs" />
+  </section>
+
+  <section>
+    <h3>Yielding components</h3>
+    <Highlight @name="block-with-yielded-components-hbs" />
+  </section>
+
+  <section>
+    <h3><Icon @type="check" /> Good</h3>
+    <p>
+      <ul>
+        <li>It can be useful to force a group components to be used together</li>
+        <li>Can reduce options like <i>"Which of these form components should I use here?"</i></li>
+      </ul>
+    </p>
+
+    <br>
+
+    <h3><Icon @type="check" /> Bad</h3>
+    <p>
+      <ul>
+        <li>It hides where things are implemented and does not have good readability</li>
+        <li>Why yield the components, if you can invoke them directly?</li>
+        <li>Hard to customise. Probably you wanna go with <LinkTo @route="component-layouts.named-blocks">named blocks</LinkTo></li>
+      </ul>
+    </p>
+  </section>
+
+</article>

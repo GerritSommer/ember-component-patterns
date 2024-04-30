@@ -1,7 +1,9 @@
-{{page-title "EmberComponentPatterns"}}
+{{page-title "Ember component patterns"}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+{{set-body-class (concat "is-theme-" this.darkMode)}}
 
-{{outlet}}
+<Base::TopHeader />
+
+<div class="content-wrapper">
+  {{outlet}}
+</div>

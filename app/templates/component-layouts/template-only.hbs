@@ -1,0 +1,54 @@
+{{!-- BEGIN-SNIPPET template-only-good-hbs
+<BlogPost
+  @title="Some title"
+  @post={{this.columns}}
+/>
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET template-only-bad-hbs
+<BlogPost
+  @title="Some title"
+  @post={{this.columns}}
+  @comments={{this.comments}}
+  @date={{this.date}}
+  @author={{this.author}}
+  @image={{this.image}}
+  @intl={{this.intlService}}
+/>
+END-SNIPPET --}}
+
+<h2>Template only component</h2>
+
+<article>
+
+  <section>
+    <p>
+      Has no backing Javscript class. The only dynamic data available is through arguments.
+    </p>
+  </section>
+
+  <section>
+    <h3><Icon @type="check" /> Good</h3>
+    <p>
+      <ul>
+        <li>Only a few arguments</li>
+        <li>Breaking up large templates</li>
+        <li>Reusable small parts like headings with common styling</li>
+      </ul>
+    </p>
+    <Highlight @name="template-only-good-hbs" />
+  </section>
+
+  <section>
+    <h3><Icon @type="cross" /> Bad</h3>
+    <p>
+      <ul>
+        <li>Many arguments</li>
+        <li>Services are meant to be inject, so don't add them through arguments</li>
+      </ul>
+    </p>
+    <Highlight @name="template-only-bad-hbs" />
+  </section>
+
+
+</article>

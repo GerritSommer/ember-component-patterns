@@ -1,0 +1,58 @@
+{{!-- BEGIN-SNIPPET with-yielded-loop-invocation-hbs
+
+//Optional block
+<MyTable>
+  <MyTable::Header @columns={{this.columns}} />
+
+  <MyTable::Body @rows={{this.rows}} as |column index|>
+    Column #{{index}} <MyTable::Cell @column={{column}} />
+  </MyTable::Body>
+
+  <MyTable::Footer />
+</MyTable>
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET with-yielded-loop-hbs
+  // MyTable/Body
+
+  {{#each @rows as |row index|}}
+    {{yield row index}}
+  {{/each}}
+END-SNIPPET --}}
+
+<h2>Block with iterated yields</h2>
+
+<article>
+
+  <section>
+    <h3>How to use it</h3>
+    <p>
+      The index will count up and every row will be evaluated through this block
+    </p>
+    <Highlight @name="with-yielded-loop-invocation-hbs" />
+  </section>
+
+  <section>
+    <h3>Yield in a loop</h3>
+    <p>
+      Each row will be yielded, so you can customise the rows once
+    </p>
+    <Highlight @name="with-yielded-loop-hbs" />
+
+  </section>
+
+
+  <section>
+    <h3><Icon @type="check" /> good</h3>
+    <ul>
+      <li>For list components</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3><Icon @type="cross" /> bad</h3>
+    <ul>
+      <li>Sometimes not easy to grasp - One block, but multiple outputs</li>
+    </ul>
+  </section>
+</article>

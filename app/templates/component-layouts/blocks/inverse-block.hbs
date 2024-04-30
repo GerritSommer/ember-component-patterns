@@ -1,0 +1,60 @@
+
+{{!-- BEGIN-SNIPPET inverse-block-hbs
+<MyTable
+  @title="Some title"
+  @rows={{this.rows}}
+  ...
+  as |rows|
+>
+  {{#each rows as |row|}}
+    <MyTable::Row @row={{row}} />
+  {{/each}}
+{{else}}
+  No data available
+</MyTable>
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET inverse-block-invocation-hbs
+{{#if @rows.length}}
+  {{yield to="default"}}
+{{else}}
+  {{yield to="inverse"}}
+{{/if}}
+END-SNIPPET --}}
+
+<h2>Block Component with inverse</h2>
+
+<article>
+
+  <section>
+    <h3>How to use it</h3>
+    <p>
+      <ul>
+        <li>Allows an else block like the If/Else helper</li>
+      </ul>
+    </p>
+    <Highlight @name="inverse-block-hbs" />
+  </section>
+
+  <section>
+    <h3>How to do it</h3>
+    <Highlight @name="inverse-block-invocation-hbs" />
+  </section>
+
+  <h3><Icon @type="check" /> Good</h3>
+  <p>
+    <ul>
+      <li>If you have clear binary states like a simple <b>"has content"</b> and <b>"is empty"</b></li>
+    </ul>
+  </p>
+
+  <br>
+
+  <h3><Icon @type="cross" /> Bad</h3>
+  <p>
+    <ul>
+      <li>Often not easy to understand. Only use it when it is semantically a perfect fit</li>
+      <li>Mostly you wanna go for <LinkTo @route="component-layouts.named-blocks">named blocks</LinkTo></li>
+    </ul>
+  </p>
+</article>

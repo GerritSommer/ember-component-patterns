@@ -1,1 +1,79 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url("reset.css");
+@import url("typography.css");
+@import url("layout.css");
+@import url("buttons.css");
+@import url("lists.css");
+@import url("snippets.css");
+
+:root {
+  color-scheme: light dark;
+
+  --light-torqoise: #68e5d7;
+  --dark-torqoise: #22c4ca;
+  --yellow: #ffd369;
+  --lachs: #ff869a;
+  --lila: #b23ce9;
+  --orange: #ff9969;
+  --strong-red: #e93c80;
+  --blue-lighter: #749eaf;
+  --blue-light: #09435c;
+  --blue-dark: #003045;
+  --color-red: #ba0021;
+  --color-green: #17b169;
+
+  --font-size: 16px;
+
+  --color-light: #444;
+  --color-dark: #ddd;
+  --color: light-dark(var(--color-light), var(--color-dark));
+
+  --bg-color-light: #eee;
+  --bg-color-dark: var(--blue-dark);
+  --bg-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+
+  --text-color-light: #666;
+  --text-color-dark: #ddd;
+  --text-color: light-dark(var(--text-color-light), var(--text-color-dark));
+
+  --link-color: light-dark(var(--blue-light), var(--dark-torqoise));
+  --link-color--active: light-dark(var(--blue-dark), var(--light-torqoise));
+
+  --title-color-light: var(#666);
+  --title-color-dark: #fff;
+  --title-color: light-dark(var(--title-color-light), var(--title-color-dark));
+
+  --border-color-light: #ccc;
+  --border-color-dark: var(--blue-light);
+  --border-color: light-dark(
+    var(--border-color-light),
+    var(--border-color-dark)
+  );
+
+  --snippets-bg-light: #333;
+  --snippets-bg-dark: var(--blue-light);
+  --snippets-bg: light-dark(var(--snippets-bg-light), var(--snippets-bg-dark));
+  --snippets-color: #d3d3d3;
+
+
+}
+
+.is-theme-light {
+  color-scheme: light;
+}
+
+.is-theme-dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.icon-red {
+  color: var(--lachs);
+}
+
+.icon-green {
+  color: #78df88;
+}
+

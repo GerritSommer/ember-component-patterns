@@ -9,6 +9,8 @@
       "ember-component-patterns/tests/*": ["tests/*"],
       "ember-component-patterns/*": ["app/*"],
       "*": ["types/*"]
-    }
+    },
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   }
 }

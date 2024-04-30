@@ -1,0 +1,43 @@
+ <aside>
+    <h1>
+      <span>Ember component patterns</span>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <LinkTo @route="component-layouts.simple">Simple</LinkTo>
+          <ul>
+            <li><LinkTo @route="component-layouts.template-only">template-only</LinkTo></li>
+          </ul>
+        </li>
+
+        <li>
+          <LinkTo @route="component-layouts.blocks.index">Simple block</LinkTo>
+          <ul>
+            <li><LinkTo @route="component-layouts.blocks.inverse-block">With inverse block</LinkTo></li>
+            <li><LinkTo @route="component-layouts.blocks.optional-block">With optional block</LinkTo></li>
+            <li><LinkTo @route="component-layouts.blocks.yielded-components">With yielded components</LinkTo></li>
+            <li><LinkTo @route="component-layouts.blocks.iterated-yields">With iterated yields</LinkTo></li>
+          </ul>
+        </li>
+
+        <li>
+          <LinkTo @route="component-layouts.provider.index">provider</LinkTo>
+          <ul>
+            <li><LinkTo @route="component-layouts.provider.yielded-components">With yielded components</LinkTo></li>
+          </ul>
+        </li>
+
+        <li>
+          <LinkTo @route="component-layouts.named-blocks.index">named-blocks</LinkTo>
+          <ul>
+            <li><LinkTo @route="component-layouts.named-blocks.optional-blocks">With optional blocks</LinkTo></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </aside>
+  <main>
+    {{outlet}}
+  </main>

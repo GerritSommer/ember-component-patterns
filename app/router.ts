@@ -7,5 +7,20 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  // Add route declarations here
+  this.route('component-layouts', function () {
+    this.route('simple');
+    this.route('template-only');
+    this.route('provider', function () {
+      this.route('yielded-components');
+    });
+    this.route('named-blocks', function () {
+      this.route('optional-blocks');
+    });
+    this.route('blocks', function () {
+      this.route('inverse-block');
+      this.route('optional-block');
+      this.route('yielded-components');
+      this.route('iterated-yields');
+    });
+  });
 });

@@ -1,0 +1,66 @@
+{{!-- BEGIN-SNIPPET named-blocks-options-invocation-hbs
+<MyTable
+  @columns={{this.columns}}
+  @hasErrors={{this.hasErrors}}
+  @isLoading={{this.isLoading}}
+>
+
+  <:footer>I am a custom footer</:footer>
+
+</MyTable>
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET named-blocks-options-hbs
+  <Table>
+
+    // @rows is now an optional argument
+    <tbody>
+      {{#if (has-block "rows")}}
+        {{yield to="body"}}
+      {{else}}
+        <MyTable::Rows @rows={{@rows}}
+      {{/if}}
+    </tbody>
+
+    {{#if (has-block "footer")}}
+      {{yield to="footer"}}
+    {{else}}
+      I am a default footer
+    {{/if}}
+  </Table>
+END-SNIPPET --}}
+
+<h2>Named with optional blocks</h2>
+
+<article>
+  <section>
+    <h3>Optionally yield to named blocks</h3>
+    <p>
+      Reveal parts of the component that an be customized
+    </p>
+    <Highlight @name="named-blocks-options-invocation-hbs" />
+  </section>
+
+  <section>
+    <h3>How</h3>
+    <p>
+      <ul>
+        <li>You can yield conditionally</li>
+        <li>You can yield properties, actions or even components</li>
+      </ul>
+    </p>
+    <Highlight @name="named-blocks-options-hbs" />
+  </section>
+
+  <section>
+    <h3>When to use</h3>
+    <p>
+      <ul>
+        <li>Allows reduction of boilerplate arguments</li>
+        <li>Still customizable where needed</li>
+        <li>Decide between many arguments or named blocks</li>
+      </ul>
+    </p>
+  </section>
+
+</article>
