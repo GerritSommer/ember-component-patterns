@@ -1,4 +1,4 @@
-{{!-- BEGIN-SNIPPET yielded-js
+{{! BEGIN-SNIPPET yielded-js
 export default class MyTableData extends Component<Args> {
   @cached
   get myDataLoader() {
@@ -14,7 +14,7 @@ export default class MyTableData extends Component<Args> {
   }
 
 }
-END-SNIPPET --}}
+END-SNIPPET }}
 
 {{!-- BEGIN-SNIPPET yielded-hbs
   {{yield
@@ -26,12 +26,12 @@ END-SNIPPET --}}
   }}
 END-SNIPPET --}}
 
-{{!-- BEGIN-SNIPPET yielded-good-hbs
+{{! BEGIN-SNIPPET yielded-good-hbs
 <MyTableData as |loader components|>
   <components.success />
   <components.error />
 </MyTableData>
-END-SNIPPET --}}
+END-SNIPPET }}
 
 <h2>Provider with yielded components</h2>
 <p>
@@ -57,10 +57,11 @@ END-SNIPPET --}}
     <p>
       <ul>
         <li>Can be helpful to supply some helper or utility components</li>
-        <li>Has the same issues as <LinkTo @route="blocks.with-yielded-components">blocks with yielded components</LinkTo></li>
+        <li>Has the same issues as
+          <LinkTo @route="component-layouts.blocks.yielded-components">blocks
+            with yielded components</LinkTo></li>
       </ul>
     </p>
   </section>
-
 
 </article>

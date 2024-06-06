@@ -1,1 +1,52 @@
-index
+{{!-- BEGIN-SNIPPET simple-example
+<MyTable
+  @columns={{this.columns}}
+  @data={{this.rows}}
+/>
+END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET complex-example
+<MyTable
+  @columns={{this.columns}}
+  @hasErrors={{this.hasErrors}}
+  @isLoading={{this.isLoading}}
+>
+  <:header as |columns|>
+    Do something with columns
+  </:header>
+
+  <:rows as |onRowClick|>
+    {{#each @rows as |row|}}
+      <MyTable::Row @row={{row}} @onClick={{onRowClick}} />
+    {{/each}}
+  </:rows>
+
+  <:footer>I am a footer</:footer>
+
+  <:loading>Loading</:loading>
+  <:error>I don't know what happend</:error>
+</MyTable>
+END-SNIPPET --}}
+
+<h2>Ember Component Patterns</h2>
+
+<article>
+  <section>
+    <p>
+      In general it is preferred to make components
+      <i><strong>composable</strong></i>
+      instead, of copying code or use class inheritance.
+    </p>
+    <p>
+      Ember provides multiple was to allow granular composition and ways to
+      change small parts of a component while still allowing a straight forward
+      component invocation.
+    </p>
+    <p>
+      This:
+      <Highlight @name="simple-example" />
+      can be the same component allowing this:
+      <Highlight @name="complex-example" />
+    </p>
+  </section>
+</article>

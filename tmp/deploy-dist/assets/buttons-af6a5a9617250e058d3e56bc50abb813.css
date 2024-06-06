@@ -1,7 +1,7 @@
 button {
   border-radius: 0;
   text-align: inherit;
-  background: none;
+  background: 0 0;
   box-shadow: none;
   padding: 0;
   cursor: pointer;

@@ -53,8 +53,6 @@
   --snippets-bg-dark: var(--blue-light);
   --snippets-bg: light-dark(var(--snippets-bg-light), var(--snippets-bg-dark));
   --snippets-color: #d3d3d3;
-
-
 }
 
 .is-theme-light {
@@ -76,4 +74,3 @@ body {
 .icon-green {
   color: #78df88;
 }
-
