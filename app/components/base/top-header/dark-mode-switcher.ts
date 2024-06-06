@@ -7,7 +7,7 @@ import { action } from '@ember/object';
 export type DarkModeOption = 'auto' | 'light' | 'dark';
 export type ThemeStorage = DarkModeOption;
 
-const MODES: DarkModeOption[] = [ 'auto', 'light', 'dark' ];
+const MODES: DarkModeOption[] = ['auto', 'light', 'dark'];
 
 export default class BaseTopHeaderDarkModeSwitcherComponent extends Component {
   @localStorage() declare darkModeStorage: ThemeStorage;
@@ -19,12 +19,12 @@ export default class BaseTopHeaderDarkModeSwitcherComponent extends Component {
   get nextOption() {
     const mode = this.darkMode;
     const index = MODES.indexOf(mode);
-    const nextIndex = index < 2 ? (index + 1) : 0;
+    const nextIndex = index < 2 ? index + 1 : 0;
     return MODES[nextIndex] || 'auto';
   }
 
   @action
   setNextMode() {
-    this.darkModeStorage = this.darkMode;
+    this.darkModeStorage = this.nextOption;
   }
 }
